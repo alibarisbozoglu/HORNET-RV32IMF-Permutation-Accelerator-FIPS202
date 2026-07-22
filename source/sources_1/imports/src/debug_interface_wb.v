@@ -32,21 +32,7 @@ begin
 	begin
 		if(wb_cyc_i && wb_stb_i && wb_we_i)
 		begin
-			if(wb_dat_i == 32'b1)
-			begin
-				$display("Success!\n");
-				$finish();
-			end
-				
-			else if(wb_dat_i == 32'd13)
-			begin
-				$display("Failure!\n");
-				$finish();
-			end
-			else begin
-				$display("Non-determined data: %d\n",wb_dat_i[31:0]); //We can output text to the terminal with this
-				$finish();
-		    end
+			$display(wb_dat_i[31:0]);
 		end    
 	end
 end
